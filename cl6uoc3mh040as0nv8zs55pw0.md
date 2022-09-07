@@ -6,7 +6,8 @@ First of all, Happy 75th Independence Day, India!!! 🇮🇳🇮🇳🇮🇳
 
 >The chemical element of atomic number 6, a non-metal with two main forms (diamond and graphite), occurs in impure form in charcoal, soot, and coal.
 
-Carbon isn't just atomic number 6, haunting us in General Organic Chemistry, but now is a programming language developed by google to eventually be used over the Legendary (and age-old) language C++ \*Dramatic music intensifies*. This article aims to introduce you to the language and write a few simple programs to understand the language. We would also try to understand why Google (did I forget to mention Google made the language) even needed to create Carbon and why it might be time for our old friend C++ to bid farewell.
+Carbon isn't just atomic number 6, haunting us in General Organic Chemistry, but now is a programming language developed by google to eventually be used over the Legendary (and age-old) language C++ \*Dramatic music intensifies*. 
+With the help of a few straightforward programs written in this article, we will try to understand and learn the language. We would also try to understand why Google (did I forget to mention Google made the language) even needed to create Carbon and why it might be time for our old friend C++ to bid farewell.
 
 ## Why Carbon?
 
@@ -26,7 +27,7 @@ Carbon is still an experimental language and by no means ready to be used in rea
 
 ## Installing Carbon and its Compiler
 
-Since Carbon is in such early stages of development, it isn't all that easy to use it on your local machine. For Windows, it's an even longer procedure since we have to install brew through WSL (Windows Subsystem for Linux) using brew. Assuming you have WSL installed with Ubuntu as your primary Linux Operating System, we can now move forward with installing brew and then ultimately installing Carbon. 
+Since Carbon is in such early stages of development, it isn't easy to use it on your local machine. For Windows, it's an even longer procedure since we have to install brew through WSL (Windows Subsystem for Linux). Assuming you have WSL installed with Ubuntu as your primary Linux Operating System, we can now move forward with installing brew and then ultimately installing Carbon. 
 
 ### Installing Homebrew
 
@@ -135,7 +136,7 @@ They execute their block only if the condition in parenthesis is True.
 
 - `Print` statements
 
-Print the value inside parenthesis. If variables need to be printed, we can use `{num}` where `num` is a number starting from 0. 
+Print the value inside the parenthesis. If variables need to be printed, we can use `{num}` where `num` is a number starting from 0. 
 Eg: 
 ```c++
 var a: auto = 1;
@@ -151,4 +152,4 @@ These are Numbers: 1, 5, 2, 6
 ```
 
 ## Conclusion
-Carbon is a fantastic Language, it's still in its early stages of development, and it'll hopefully get better over time. One obvious flaw is the lack of documentation. I want to remind you that Carbon is still under development, and Google does not recommend using it for any scaled-up applications. I hope you have as much fun as I did try to learn Carbon!
+Carbon is a fantastic Language, it's still in its early stages of development, and it'll hopefully get better over time. One obvious flaw is the lack of documentation. I want to remind you that Carbon is still under development, and Google does not recommend using it for any scaled-up applications. I hope you have as much fun as I did trying to learn Carbon!
