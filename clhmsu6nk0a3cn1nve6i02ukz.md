@@ -2,7 +2,7 @@
 title: "Mojo Programming Language: The Future of Data Science?"
 datePublished: Sun May 14 2023 02:30:39 GMT+0000 (Coordinated Universal Time)
 cuid: clhmsu6nk0a3cn1nve6i02ukz
-slug: mojo-programming-language-the-future-of-data-science
+slug: mojo
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/ieic5Tq8YMk/upload/0c6105b57edd9a2f7dfc9476d332628c.jpeg
 tags: programming-blogs, data-science, machine-learning, datascience
 
