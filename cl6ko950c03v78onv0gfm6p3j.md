@@ -1,4 +1,13 @@
-## What is AI — Working with OpenAI's Models
+---
+title: "What is AI — Working with OpenAI's Models"
+seoTitle: "Working with OpenAI"
+datePublished: Mon Aug 08 2022 11:30:00 GMT+0000 (Coordinated Universal Time)
+cuid: cl6ko950c03v78onv0gfm6p3j
+slug: what-is-ai-working-with-openais-models
+cover: https://cdn.hashnode.com/res/hashnode/image/unsplash/0E_vhMVqL9g/upload/v1657786773977/EJcAN010C.jpeg
+tags: artificial-intelligence, python, machine-learning, apis, codenewbies
+
+---
 
 Artificial Intelligence is often understood as a complicated forte only for those indulged in the field. OpenAI aims to change that with their AI models, which they have made available to the public. In this article, we would go through the setup process and implement a few simple applications in a few lines of code!
 
@@ -6,7 +15,7 @@ Artificial Intelligence is often understood as a complicated forte only for thos
 
 The first step to any API service is to [sign up](https://beta.openai.com/signup) for their service. After signing up, log back in and view your API key using [this](https://beta.openai.com/account/api-keys) link and copy your client secret and paste it into your `.env` file in the following format
 
-```.env
+```python
 OPENAI_API_KEY=key
 ```
 
@@ -24,6 +33,7 @@ load_dotenv()
 openai.api_key = getenv("OPENAI_API_KEY")
 openai.Engine.list()
 ```
+
 Output:
 
 ```json
@@ -69,7 +79,6 @@ Output:
   ],
   "object": "list"
 }
-
 ```
 
 Although there are about 50 models trained for all your needs, we will be using only a few in this tutorial.
@@ -79,6 +88,7 @@ Although there are about 50 models trained for all your needs, we will be using 
 ## Completing a prompt:
 
 Write or copy the following code into your script
+
 ```python
 import openai
 from dotenv import load_dotenv
@@ -102,10 +112,12 @@ print(response)
 
 print(prompt + "..." + response.choices[0].text)
 ```
+
 The following code will utilize OpenAI's DaVinci Engine on the Prompt "Maybe I just need sleep." It will automatically generate an output with what it seems appropriate
 
 Output:
-```
+
+```python
 {
   "choices": [
     {
@@ -148,73 +160,55 @@ We can see that this prompt took up 35 tokens from our credit, this can also be 
 
 Open AI can also write unique ads, we will only be showcasing the response variable from now along with the output it generates.
 
+> Prompt: "Create an ad campaign targeted at orphans from the following prompt:\\nPrompt: A Phone where you can only call your mother"
 
->Prompt:  "Create an ad campaign targeted at orphans from the following prompt:\nPrompt: A Phone where you can only call your mother"
+> Response: "A phone where you can only call your mother"
 
->Response:
-"A phone where you can only call your mother"
-
->Orphans need love too. And with this new phone, they can stay connected to the one person who loves them the most: their mother. With this new phone, they can call their mother anytime, anywhere. So don't forget about the orphans when you're shopping for your new phone. They need your love too.
-
+> Orphans need love too. And with this new phone, they can stay connected to the one person who loves them the most: their mother. With this new phone, they can call their mother anytime, anywhere. So don't forget about the orphans when you're shopping for your new phone. They need your love too.
 
 Here is OpenAI trying to tell a joke:
 
->Prompt: "Tell me a programming joke"
+> Prompt: "Tell me a programming joke"
 
->Response:
-Why do programmers always have to write code? Because without code, there would be nothing to debug!
-
+> Response: Why do programmers always have to write code? Because without code, there would be nothing to debug!
 
 So AI jokes might not be my cup of tea, but at least I can enjoy an AI-generated poem.
 
->Prompt:  "Write a poem on cotton in 30 words or less: "
+> Prompt: "Write a poem on cotton in 30 words or less: "
 
->Response: 
-Cotton is a soft, fluffy material
-that is often used to make clothing.
-It is also used to stuff pillows and plush toys.
+> Response: Cotton is a soft, fluffy material that is often used to make clothing. It is also used to stuff pillows and plush toys.
 
 I don't know how I feel about AI writing totally unique pieces of text, but it is something special.
 
 Lets make a simple chat bot
 
->Prompt: 
-"I am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with "Unknown".
+> Prompt: "I am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with "Unknown".
 
->Q: What is human life expectancy in the United States?
->A: Human life expectancy in the United States is 78 years.
+> Q: What is human life expectancy in the United States? A: Human life expectancy in the United States is 78 years.
 
->Q: Who was president of the United States in 1955?
->A: Dwight D. Eisenhower was president of the United States in 1955.
+> Q: Who was president of the United States in 1955? A: Dwight D. Eisenhower was president of the United States in 1955.
 
->Q: Which party did he belong to?
->A: He belonged to the Republican Party.
+> Q: Which party did he belong to? A: He belonged to the Republican Party.
 
->Q: What is the square root of banana?
->A: Unknown
+> Q: What is the square root of banana? A: Unknown
 
->Q: How does a telescope work?
->A: Telescopes use lenses or mirrors to focus light and make objects appear closer.
+> Q: How does a telescope work? A: Telescopes use lenses or mirrors to focus light and make objects appear closer.
 
->Q: How many squigs are in a bonk?
->A: Unknown
+> Q: How many squigs are in a bonk? A: Unknown
 
->Q: Where is the Taj Mahal?
->A:"
+> Q: Where is the Taj Mahal? A:"
 
->Response:
+> Response:
 
->The Taj Mahal is located in Agra, India.
+> The Taj Mahal is located in Agra, India.
 
 Convert Python code into C++ code
 
-> Prompt: "Convert the following python code into C++\narr = [1,7,5,3]\narr.sort()\nprint(arr)"
+> Prompt: "Convert the following python code into C++\\narr = \[1,7,5,3\]\\narr.sort()\\nprint(arr)"
 
->```python
-arr = [1,7,5,3]
-arr.sort()
-print(arr)
-```
+arr = \[1,7,5,3\] arr.sort() print(arr)
+
+```python
 
 > Response: 
 >```c++
