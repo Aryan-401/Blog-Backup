@@ -1,4 +1,13 @@
-## Getting Started with Machine Learning
+---
+title: "Getting Started with Machine Learning"
+seoDescription: "Machine Learning is a buzzword in the world of Computer Science. This article will introduce you to Machine Learning with a sample project."
+datePublished: Mon Aug 29 2022 11:30:00 GMT+0000 (Coordinated Universal Time)
+cuid: cl7eoi0qn06ts1cnv8ppf61oz
+slug: getting-started-with-machine-learning
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658259844225/dwDbS4Orx.png
+tags: python, data-science, machine-learning, learning, pandas
+
+---
 
 **Machine Learning**! **Artificial Intelligence**! **Computational Analysis**! All these buzz words surround the world of tech. These buzz words have created a hardened cast over the computer science community. As part of the hype, I learnt the basics of Machine Learning using `pandas` and `sklearn`. We would also use [this](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot/download?datasetVersionNumber=5) dataset from Kaggle to interpret and understand our data. Enough small-talk. Let's get coding!
 
