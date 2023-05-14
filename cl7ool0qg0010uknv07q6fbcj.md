@@ -1,4 +1,14 @@
-## Visualizing Data — Women's Fashion Catalog
+---
+title: "Visualizing Data — Women's Fashion Catalog"
+seoTitle: "Visualizing Data I — Women's Clothing Catalog"
+seoDescription: "Start of by visualizing the data in a women's clothing catalog and find some interesting graphs and word clouds along the way"
+datePublished: Mon Sep 05 2022 11:30:00 GMT+0000 (Coordinated Universal Time)
+cuid: cl7ool0qg0010uknv07q6fbcj
+slug: visualizing-data-womens-fashion-catalog
+cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/TS--uNw-JqE/upload/17ad26d58b3169ec1481e09841143f6c.jpeg
+tags: data, python, data-science, google
+
+---
 
 ## An Introduction to the dataset
 
@@ -36,7 +46,9 @@ print(f"Size: {dataset.shape[0]}")  # Number of Rows
 data_set_trim_1 = dataset.drop(['Deatils', "Sizes", 'Unnamed: 0'], axis=1)  # Since we only care about numeric data, for now, we can remove all the data we don't need (also, yes details is spelled like that in the dataset)
 data_set_trim_1.head()
 ```
+
 Output:
+
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660282673318/rlB-hu3fJ.png align="left")
 
 ### Pre-Processing the data
@@ -49,6 +61,7 @@ data_set_trim_1.head()
 ```
 
 Output:
+
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660282864929/XFvy_qkvz.png align="left")
 
 At this point, I thought the data would be converted to integers, but I was wrong all the data were still strings. To verify this, I ran the following one-liner
@@ -56,10 +69,13 @@ At this point, I thought the data would be converted to integers, but I was wron
 ```py
 type(data_set_trim_1.iloc[22]["SellPrice"])  #Noticing that SellPrice as well as MRP and Discount are Strings and not text
 ```
+
 Output:
-```
+
+```python
 str
 ```
+
 Now I would convert all the strings into integers using the `.apply()` attribute and replace the string `Nan` values with actual `np.NaN` values
 
 ```py
@@ -69,8 +85,10 @@ print(data_set_trim_2.dtypes)  # All Columns are String DataType
 data_set_trim_2[['MRP', 'SellPrice', "Discount"]] = data_set_trim_2[['MRP', 'SellPrice', "Discount"]].apply(pd.to_numeric)  # Changing Required Columns to integer
 print(data_set_trim_2.dtypes)
 ```
+
 Output
-```
+
+```python
 BrandName    object
 MRP          object
 SellPrice    object
@@ -91,31 +109,39 @@ dtype: object
 f_data = data_set_trim_2  # Setting Final Data
 print(f"Size: {f_data.shape[0]}")
 ```
- we return with `22550` rows worth of complete data. Now we can start visualizing it ;)
+
+we return with `22550` rows worth of complete data. Now we can start visualizing it ;)
 
 ## Accessing Basic Information
+
 Let's start with something Simple. How many unique brands do we have in our dataset?
 
 ```py
 f_data.nunique()["BrandName"]  # Number of Brands in Dataset
 ```
+
 Output:
-```
+
+```python
 177
 ```
 
 That's a lot of brands! Let's get a deeper look at the data using the `.describe()` command
 
 ```py
-f_data.describe().T 
+f_data.describe().T
 ```
+
 Output:
+
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660284465754/8pJbpuu_d.png align="left")
 
 What about the most expensive Items?
+
 ```py
 f_data[f_data.SellPrice == f_data.SellPrice.max()]  # Most Expensive Item(s)
 ```
+
 Output:
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660284132392/IB33YWtrH.png align="left")
@@ -127,9 +153,10 @@ What about the most expensive brands? Let's figure out the average price of any 
 ```py
 f_data.groupby('BrandName')['SellPrice'].mean().sort_values(ascending=False).head()  # Mean Price of every Brand
 ```
+
 Output:
 
-```
+```python
 BrandName
 just cavalli      18309.600000
 coach             12616.769231
@@ -138,15 +165,17 @@ ted baker         10031.111111
 emporio armani     9423.509804
 Name: SellPrice, dtype: float64
 ```
+
 You can similarly find the cheapest brand by changing `ascending=False` to `True`
 
 ## Real Visualizations using Matplotlib and Seaborn
 
-Let's start by plotting a heatmap of our data. 
+Let's start by plotting a heatmap of our data.
 
 ```py
 sns.heatmap(f_data.corr(),annot=True,cmap='coolwarm',linewidths=0.2)
 ```
+
 Output:
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660284776400/cDLJfnPVD.png align="left")
@@ -164,13 +193,14 @@ Output:
 
 Here is a scatter plot of all the prices per category
 
-  ```py
+```py
 plt.figure(figsize=(20,7))
 sns.scatterplot(f_data['MRP'],f_data['SellPrice'],hue=f_data['Category'])
 ```
-Output:
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660285468095/7anRo55AH.png align="left")
 
+Output:
+
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660285468095/7anRo55AH.png align="left")
 
 Let's figure out which category is the most discounted
 
@@ -192,14 +222,17 @@ f_data.head()
 plt.figure(figsize=(20,5))
 sns.countplot(f_data['Category'],hue=f_data['D_range'])
 ```
+
 Output:
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660285630734/YcSj7qNRA.png align="left")
 
 # Fun with WordClouds
+
 We've had some interesting plots, but now let's have some fun with '✨word clouds✨
 
 Since the Word Cloud Module takes a string as input we are going to be joining the various strings
+
 ```py
 textCategory = " ".join(i for i in f_data['Category'])
 textCompany = " ".join(i for i in f_data['BrandName'])
@@ -212,7 +245,8 @@ word_cloud_company.to_file('company.png')
 word_cloud_category = WordCloud(collocations=False, background_color='black', width=1920, height=1080).generate(textCategory)
 word_cloud_category.to_file('category.png')
 ```
-Output: 
+
+Output:
 
 ![company.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660380939668/MkN9I9ojR.png align="left")
 
@@ -223,6 +257,7 @@ How about using the sizes column we dropped while preprocessing
 Let's make a word cloud of the Sizes and Details column!
 
 #Processing the data
+
 ```py
 only_size = dataset["Sizes"]
 only_size = only_size.replace("Nan",np.nan)  # Replacing all "Nan" strings with np.NAN
@@ -237,7 +272,6 @@ textSize = " ".join(i for i in only_size)
 word_cloud_size = WordCloud(collocations=False, background_color='black', width=1920, height=1080).generate(textSize)
 word_cloud_size.to_file('size.png')
 ```
-
 
 ![size.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660381595693/C1kfWTJKn.png align="left")
 
@@ -258,12 +292,10 @@ word_cloud_detail = WordCloud(collocations=False, background_color='black', widt
 word_cloud_detail.to_file('detail.png')
 ```
 
-
 ![detail.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660381647839/9sTkhiukM.png align="left")
 
 # Conclusion
 
-Well, that's all, folks! I don't really have a conclusion, but DATA IS SO COOL! 
+Well, that's all, folks! I don't really have a conclusion, but DATA IS SO COOL!
 
 You can find the Google Colab Link [here](https://colab.research.google.com/drive/1GOPw9ZLgMxADKj2D3nDdnxzEf115D6jD?usp=sharing)
-
