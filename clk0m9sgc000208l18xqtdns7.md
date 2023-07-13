@@ -3,7 +3,7 @@ title: "The Subtle Art of Story-Telling Using Tableau"
 seoTitle: "Story Telling with Tableau"
 datePublished: Thu Jul 13 2023 03:55:01 GMT+0000 (Coordinated Universal Time)
 cuid: clk0m9sgc000208l18xqtdns7
-slug: the-subtle-art-of-story-telling-using-tableau
+slug: story-telling-using-tableau
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1689192690402/b84eb0bf-3e93-4f11-8f6b-b1e73264218d.jpeg
 tags: tutorial, data, story, tableau, data-visualisation-1
 
