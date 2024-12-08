@@ -2,7 +2,7 @@
 title: "PaliGemma 2 - VLMs made easy"
 datePublished: Sun Dec 08 2024 13:05:51 GMT+0000 (Coordinated Universal Time)
 cuid: cm4fma1di000609jl7kjh786w
-slug: paligemma-2-vlms-made-easy
+slug: paligemma-2
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1733661916659/5268b3ad-67c5-4364-90aa-692989f51f43.webp
 tags: opensource, google, huggingface, finetuning, vlm
 
